@@ -7,29 +7,43 @@ import (
 
 func TestAverage(t *testing.T) {
 
-	var input = [15]float32{1, 2, 3, 4, 5, 6}
 	var result float32
+	var input = [15]float32{1, 2, 3, 4, 5, 6}
 
-	t.Run("Array", func(t *testing.T) {
+	result = 3.5
+	realResult := Average(input)
 
-		result = 3.5
-		realResult := Average(input)
+	if result != realResult {
+		t.Errorf("expected result %f != %f real result", result, realResult)
+	}
 
-		if result != realResult {
-			t.Errorf("expected result %f != %f real result", result, realResult)
-		}
-	})
 }
 
 func TestReverse(t *testing.T) {
 
-	var input = []int64{1, 2, 5, 15}
-	var result = []int64{15, 5, 2, 1}
+	t.Run("Default_full", func(t *testing.T) {
 
-	realResult := Reverse(input)
+		var input = []int64{1, 2, 5, 15}
+		var result = []int64{15, 5, 2, 1}
 
-	if !reflect.DeepEqual(realResult, result) {
-		t.Errorf("expected result %v != %v real result", result, realResult)
-	}
+		realResult := Reverse(input)
 
+		if !reflect.DeepEqual(realResult, result) {
+			t.Errorf("Expected result %v != %v real result", result, realResult)
+		}
+
+	})
+
+	t.Run("Default_nil ", func(t *testing.T) {
+
+		var input []int64
+		var result = []int64(nil)
+
+		realResult := Reverse(input)
+
+		if !reflect.DeepEqual(realResult, result) {
+			t.Errorf("Expected result %v != %v real result", result, realResult)
+		}
+
+	})
 }
