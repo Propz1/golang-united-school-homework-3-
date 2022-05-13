@@ -14,12 +14,7 @@ func Reverse(input []int64) (result []int64) {
 			i--
 			j++
 		}
-
-		return result
-
-	} else {
-		var result []int64
-		return result
 	}
 
+	return result
 }
