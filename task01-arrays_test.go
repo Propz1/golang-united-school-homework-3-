@@ -10,7 +10,7 @@ func TestAverage(t *testing.T) {
 	var input = [15]float32{1, 2, 3, 4, 5, 6}
 
 	result = 3.5
-	realResult := Average(input)
+	realResult := average(input)
 
 	if result != realResult {
 		t.Errorf("expected result %f != %f real result", result, realResult)

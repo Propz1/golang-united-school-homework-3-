@@ -1,6 +1,6 @@
 package homework
 
-func Reverse(input []int64) (result []int64) {
+func reverse(input []int64) (result []int64) {
 
 	if input != nil {
 

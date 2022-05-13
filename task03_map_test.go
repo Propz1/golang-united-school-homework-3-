@@ -12,7 +12,7 @@ func TestSortMapValues(t *testing.T) {
 		var input = map[int]string{2: "a", 0: "b", 1: "c"}
 		var result = []string{"b", "c", "a"}
 
-		realResult := SortMapValues(input)
+		realResult := sortMapValues(input)
 
 		if !reflect.DeepEqual(realResult, result) {
 			t.Errorf("Expected result %v != %v real result", result, realResult)
@@ -25,7 +25,7 @@ func TestSortMapValues(t *testing.T) {
 		var input = map[int]string{10: "aa", 0: "bb", 500: "cc"}
 		var result = []string{"bb", "aa", "cc"}
 
-		realResult := SortMapValues(input)
+		realResult := sortMapValues(input)
 
 		if !reflect.DeepEqual(realResult, result) {
 			t.Errorf("Expected result %v != %v real result", result, realResult)
@@ -37,7 +37,7 @@ func TestSortMapValues(t *testing.T) {
 		var result []string
 		var input = map[int]string{}
 
-		realResult := SortMapValues(input)
+		realResult := sortMapValues(input)
 
 		if !reflect.DeepEqual(realResult, result) {
 			t.Errorf("Expected result %v != %v real result", result, realResult)
